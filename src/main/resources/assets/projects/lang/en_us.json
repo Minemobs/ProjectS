@@ -1,0 +1,34 @@
+{
+    //items
+    "item.projects.project_item": "Le cauchemar de jerome",
+    "item.projects.stonks_item": "Ultra Stonks",
+
+    //blocks
+    "block.projects.project_block": "C rien c le sud",
+    "block.projects.specal_block": "Specal block",
+    
+    //creative tab
+    "itemGroup.Project S": "Project Skyblock Creative tab",
+
+    //tools
+    //sword
+    "item.projects.obsidian_sword": "Obsidian sword",
+    //pickaxe
+    "item.projects.obsidian_pickaxe": "Obsidian pickaxe",
+    //axe
+    "item.projects.obsidian_axe": "Obsidian axe",
+    //hoe
+    "item.projects.emerald_hoe": "§aEmerald hoe",
+    //shovel
+    "item.projects.obsidian_shovel": "Obsidian shovel",
+
+    //armor
+    //helmet
+    "item.projects.obsidian_helmet": "Obsidian helmet",
+    //chestplate
+    "item.projects.obsidian_chestplate": "Obsidian chestplate",
+    //leggings
+    "item.projects.obsidian_leggings": "Obsidian leggings",
+    //boots
+    "item.projects.obsidian_boots": "Obsidian boots"
+}

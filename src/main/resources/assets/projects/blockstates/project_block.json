@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "projects:block/project_block" }
+    }
+}

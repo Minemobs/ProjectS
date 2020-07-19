@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minecraft:block/stonks_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/project_block"
+    },
+    "type=top": {
+      "model": "stonks:block/stonks_slab_top"
+    }
+  }
+}
