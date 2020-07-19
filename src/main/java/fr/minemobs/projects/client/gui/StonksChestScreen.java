@@ -17,8 +17,6 @@ public class StonksChestScreen extends ContainerScreen<ProjectChestContainer> {
 
 	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(ProjectMain.MOD_ID, "textures/gui/example_chest.png");
 	
-	Minecraft minecraft = Minecraft.getInstance();
-	
 	public StonksChestScreen(ProjectChestContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
 		super(screenContainer, inv, titleIn);
 		this.guiLeft = 0;

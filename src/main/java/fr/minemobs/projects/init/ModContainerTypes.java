@@ -10,9 +10,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModContainerTypes {
 	
-	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPE = DeferredRegister.create(ForgeRegistries.CONTAINERS,
+	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = DeferredRegister.create(ForgeRegistries.CONTAINERS,
 			ProjectMain.MOD_ID);
-	
-	public static final RegistryObject<ContainerType<ProjectChestContainer>> EXEMPLE_CHEST = CONTAINER_TYPE.register("stonks_chest", () -> IForgeContainerType.create(ProjectChestContainer::new));
-	
+
+	public static final RegistryObject<ContainerType<ProjectChestContainer>> EXAMPLE_CHEST = CONTAINER_TYPES
+			.register("stonks_chest", () -> IForgeContainerType.create(ProjectChestContainer::new));
 }

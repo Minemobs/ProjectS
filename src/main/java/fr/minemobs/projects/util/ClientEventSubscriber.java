@@ -14,6 +14,6 @@ public class ClientEventSubscriber {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent e){
-        ScreenManager.registerFactory(ModContainerTypes.EXEMPLE_CHEST.get(), StonksChestScreen::new);
+        ScreenManager.registerFactory(ModContainerTypes.EXAMPLE_CHEST.get(), StonksChestScreen::new);
     }
 }

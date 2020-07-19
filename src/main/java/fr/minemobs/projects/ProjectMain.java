@@ -42,7 +42,7 @@ public class ProjectMain {
     	ItemInit.ITEMS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
     	ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
-    	ModContainerTypes.CONTAINER_TYPE.register(modEventBus);
+    	ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
     	
 		BiomeInit.BIOMES.register(modEventBus);
 		DimensionInit.MOD_DIMENSIONS.register(modEventBus);

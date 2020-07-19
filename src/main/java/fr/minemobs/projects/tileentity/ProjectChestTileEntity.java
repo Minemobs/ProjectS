@@ -43,7 +43,7 @@ public class ProjectChestTileEntity extends LockableLootTileEntity {
 	}
 
 	public ProjectChestTileEntity() {
-		this(ModTileEntityTypes.PROJECT_CHEST.get());
+		this(ModTileEntityTypes.EXAMPLE_CHEST.get());
 	}
 
 	@Override

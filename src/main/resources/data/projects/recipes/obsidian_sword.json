@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "pattern": [
       "ror",
-      "sen",
+      "sef",
       " b "
     ],
     "key": {
@@ -15,8 +15,8 @@
           "s": {
             "item": "projects:stonks_item"
         },
-        "n": {
-            "item": "minecraft:netherite_block"
+        "f": {
+            "item": "minecraft:feather"
         },
         "e": {
             "item": "minecraft:ender_pearl"

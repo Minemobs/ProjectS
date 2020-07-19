@@ -14,61 +14,63 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 
 public class ProjectChestContainer extends Container {
-	
+
 	public final ProjectChestTileEntity tileEntity;
-	
 	private final IWorldPosCallable canInteractWithCallable;
 
-	public ProjectChestContainer(final int windowId, final PlayerInventory playerInventory, final ProjectChestTileEntity tileEntity) {
-		super(ModContainerTypes.EXEMPLE_CHEST.get(), windowId);
+	public ProjectChestContainer(final int windowId, final PlayerInventory playerInventory,
+								 final ProjectChestTileEntity tileEntity) {
+		super(ModContainerTypes.EXAMPLE_CHEST.get(), windowId);
 		this.tileEntity = tileEntity;
 		this.canInteractWithCallable = IWorldPosCallable.of(tileEntity.getWorld(), tileEntity.getPos());
-		
-		//Main inventory
+
+		// Main Inventory
 		int startX = 8;
 		int startY = 18;
 		int slotSizePlus2 = 18;
-		for(int row = 0; row < 4; ++row) {
-			for(int column = 0; column < 9; ++column) {
-				this.addSlot(new Slot(tileEntity, (row *9) + column, startX + (column * slotSizePlus2), startY + (row * slotSizePlus2)));
+		for (int row = 0; row < 4; ++row) {
+			for (int column = 0; column < 9; ++column) {
+				this.addSlot(new Slot(tileEntity, (row * 9) + column, startX + (column * slotSizePlus2),
+						startY + (row * slotSizePlus2)));
 			}
 		}
-		
-		//Main Player Inventory
+
+		// Main Player Inventory
 		int startPlayerInvY = startY * 5 + 12;
-		for(int row = 0; row < 3; ++row) {
-			for(int column = 0; column < 9; ++column) {
-				this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * slotSizePlus2), startPlayerInvY + (row * slotSizePlus2)));
+		for (int row = 0; row < 3; ++row) {
+			for (int column = 0; column < 9; ++column) {
+				this.addSlot(new Slot(playerInventory, 9 + (row * 9) + column, startX + (column * slotSizePlus2),
+						startPlayerInvY + (row * slotSizePlus2)));
 			}
 		}
-		
-		//Hotbar
-		int hotbarY = startPlayerInvY + (startPlayerInvY / 2) +7;
-		for(int column = 0; column < 9; ++column) {
+
+		// Hotbar
+		int hotbarY = startPlayerInvY + (startPlayerInvY / 2) + 7;
+		for (int column = 0; column < 9; ++column) {
 			this.addSlot(new Slot(playerInventory, column, startX + (column * slotSizePlus2), hotbarY));
 		}
-		
 	}
 
-	private static ProjectChestTileEntity getTileEntity(final PlayerInventory playerInventory, final PacketBuffer data) {
-		Objects.requireNonNull(playerInventory, "playerinventory cannot be null");
+	private static ProjectChestTileEntity getTileEntity(final PlayerInventory playerInventory,
+														final PacketBuffer data) {
+		Objects.requireNonNull(playerInventory, "playerInventory cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final TileEntity tileAtPos = playerInventory.player.world.getTileEntity(data.readBlockPos());
-		if(tileAtPos instanceof ProjectChestTileEntity) {
+		if (tileAtPos instanceof ProjectChestTileEntity) {
 			return (ProjectChestTileEntity) tileAtPos;
 		}
-		throw new IllegalStateException("Tile entity is not correct" + tileAtPos);
+		throw new IllegalStateException("Tile entity is not correct! " + tileAtPos);
 	}
-	
+
 	public ProjectChestContainer(final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
 		this(windowId, playerInventory, getTileEntity(playerInventory, data));
 	}
-	
+
 	@Override
 	public boolean canInteractWith(PlayerEntity playerIn) {
-		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.project_block.get());
+		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.STONKS_CHEST.get());
 	}
-	
+
 	@Override
 	public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;

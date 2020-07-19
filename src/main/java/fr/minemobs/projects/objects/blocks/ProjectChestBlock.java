@@ -21,38 +21,37 @@ public class ProjectChestBlock extends Block {
 	public ProjectChestBlock(Properties properties) {
 		super(properties);
 	}
-	
+
 	@Override
 	public boolean hasTileEntity(BlockState state) {
 		return true;
 	}
-	
+
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		return ModTileEntityTypes.PROJECT_CHEST.get().create();
+		return ModTileEntityTypes.EXAMPLE_CHEST.get().create();
 	}
-	
+
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
-			Hand handIn, BlockRayTraceResult hit) {
-		if(!worldIn.isRemote) {
+											 Hand handIn, BlockRayTraceResult result) {
+		if (!worldIn.isRemote) {
 			TileEntity tile = worldIn.getTileEntity(pos);
-			if(tile instanceof ProjectChestTileEntity) {
-				NetworkHooks.openGui((ServerPlayerEntity) player, (ProjectChestTileEntity)tile, pos);
+			if (tile instanceof ProjectChestTileEntity) {
+				NetworkHooks.openGui((ServerPlayerEntity) player, (ProjectChestTileEntity) tile, pos);
 				return ActionResultType.SUCCESS;
 			}
 		}
 		return ActionResultType.FAIL;
 	}
-	
+
 	@Override
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
-		if(state.getBlock() != newState.getBlock()) {
+		if (state.getBlock() != newState.getBlock()) {
 			TileEntity te = worldIn.getTileEntity(pos);
-			if(te instanceof ProjectChestTileEntity) {
-				InventoryHelper.dropItems(worldIn, pos, ((ProjectChestTileEntity)te).getItems());
+			if (te instanceof ProjectChestTileEntity) {
+				InventoryHelper.dropItems(worldIn, pos, ((ProjectChestTileEntity) te).getItems());
 			}
 		}
 	}
-	
 }

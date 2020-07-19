@@ -10,13 +10,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModTileEntityTypes {
-	
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, ProjectMain.MOD_ID);
-	
-	public static final RegistryObject<TileEntityType<QuarryTileEntity>> quarry = TILE_ENTITY_TYPES.register("quarry",
+
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(
+			ForgeRegistries.TILE_ENTITIES, ProjectMain.MOD_ID);
+
+	public static final RegistryObject<TileEntityType<QuarryTileEntity>> QUARRY = TILE_ENTITY_TYPES.register("quarry",
 			() -> TileEntityType.Builder.create(QuarryTileEntity::new, OldBlockInit.quarry).build(null));
-	
-	public static final RegistryObject<TileEntityType<ProjectChestTileEntity>> PROJECT_CHEST = TILE_ENTITY_TYPES
+
+	public static final RegistryObject<TileEntityType<ProjectChestTileEntity>> EXAMPLE_CHEST = TILE_ENTITY_TYPES
 			.register("stonks_chest", () -> TileEntityType.Builder
 					.create(ProjectChestTileEntity::new, BlockInit.STONKS_CHEST.get()).build(null));
 	

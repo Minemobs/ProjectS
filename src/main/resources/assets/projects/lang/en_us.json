@@ -30,5 +30,8 @@
     //leggings
     "item.projects.obsidian_leggings": "Obsidian leggings",
     //boots
-    "item.projects.obsidian_boots": "Obsidian boots"
+    "item.projects.obsidian_boots": "Obsidian boots",
+
+    //gui
+    "container.example_chest": "Example Chest"
 }
