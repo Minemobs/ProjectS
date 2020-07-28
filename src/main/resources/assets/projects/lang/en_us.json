@@ -2,10 +2,12 @@
     //items
     "item.projects.project_item": "Le cauchemar de jerome",
     "item.projects.stonks_item": "Ultra Stonks",
+    "item.projects.special_item": "Special item",
 
     //blocks
     "block.projects.project_block": "C rien c le sud",
     "block.projects.specal_block": "Specal block",
+    "block.projects.lava_sponge": "Lava sponge",
     
     //creative tab
     "itemGroup.Project S": "Project S Creative tab",
@@ -36,5 +38,10 @@
     "container.example_chest": "Example Chest",
 
     //crops
-    "block.projects.stonks_crop": "Stonks crops"
+    "block.projects.stonks_crop": "Stonks crops",
+
+    //enchants
+    "enchantment.projects.explosion": "Explosion",
+    "enchantment.projects.obsidian": "Obsidian Boots",
+    "enchantment.projects.upstep": "no translation for this"
 }
