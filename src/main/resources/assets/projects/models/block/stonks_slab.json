@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/slab",
+  "parent": "block/slab",
   "textures": {
     "bottom": "projects:block/project_block",
     "top": "projects:block/project_block",

@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "projects:blocks/stonks_crop_stage1"
+    }
+}

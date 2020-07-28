@@ -1,6 +1,5 @@
 package fr.minemobs.projects.tileentity;
 
-
 import javax.annotation.Nullable;
 
 import fr.minemobs.projects.init.BlockInit;
@@ -70,14 +69,16 @@ public class QuarryTileEntity extends TileEntity implements ITickableTileEntity 
 	private boolean destroyBlock(BlockPos pos, boolean dropBlock, @Nullable Entity entity) {
 		BlockState blockstate = world.getBlockState(pos);
 		if (blockstate.isAir(world, pos) || blockstate.getBlock().equals(Blocks.BARRIER) || blockstate.getBlock().equals(Blocks.BEDROCK) || blockstate.getBlock() == Blocks.COMMAND_BLOCK
-				|| blockstate.getBlock() == Blocks.CHAIN_COMMAND_BLOCK || blockstate.getBlock() == Blocks.REPEATING_COMMAND_BLOCK || blockstate.getBlockState().equals(this.getBlockState()))
+				|| blockstate.getBlock() == Blocks.CHAIN_COMMAND_BLOCK || blockstate.getBlock() == Blocks.REPEATING_COMMAND_BLOCK || blockstate.getBlock().equals(Blocks.DRAGON_EGG) ||
+				blockstate.getBlock().equals(Blocks.END_PORTAL) || blockstate.getBlock().equals(Blocks.END_PORTAL_FRAME) || blockstate.getBlock().equals(Blocks.NETHER_PORTAL) ||
+				blockstate.getBlock().equals(Blocks.END_GATEWAY) || blockstate.getBlockState().equals(this.getBlockState()))
 			return false;
 		else {
 			IFluidState fluidstate = world.getFluidState(pos);
 			world.playEvent(2001, pos, Block.getStateId(blockstate));
 			if (dropBlock) {
 				TileEntity tileentity = blockstate.hasTileEntity() ? world.getTileEntity(pos) : null;
-				Block.spawnDrops(blockstate, world, this.pos.add(-1, 1.5, 0), tileentity, entity, ItemStack.EMPTY);
+				Block.spawnDrops(blockstate, world, this.pos.add(0, 3.5, 0), tileentity, entity, ItemStack.EMPTY);
 			}
 			return world.setBlockState(pos, fluidstate.getBlockState(), 3);
 		}

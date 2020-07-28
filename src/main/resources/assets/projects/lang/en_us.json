@@ -8,7 +8,7 @@
     "block.projects.specal_block": "Specal block",
     
     //creative tab
-    "itemGroup.Project S": "Project Skyblock Creative tab",
+    "itemGroup.Project S": "Project S Creative tab",
 
     //tools
     //sword
@@ -33,5 +33,8 @@
     "item.projects.obsidian_boots": "Obsidian boots",
 
     //gui
-    "container.example_chest": "Example Chest"
+    "container.example_chest": "Example Chest",
+
+    //crops
+    "block.projects.stonks_crop": "Stonks crops"
 }

@@ -2,16 +2,20 @@ package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.objects.blocks.BlockQuarry;
+import fr.minemobs.projects.objects.blocks.LavaSpongeBlock;
 import fr.minemobs.projects.objects.blocks.ModPressurePlateBlock;
 import fr.minemobs.projects.objects.blocks.ModWoodButtonBlock;
 import fr.minemobs.projects.objects.blocks.ProjectChestBlock;
 import fr.minemobs.projects.objects.blocks.Specalblock;
+import fr.minemobs.projects.objects.blocks.StonksCrop;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.SpongeBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -27,7 +31,10 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> project_block = BLOCKS.register("project_block", () -> new Block(
 			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
-
+	
+	public static final RegistryObject<Block> lava_sponge = BLOCKS.register("lava_sponge", () -> new LavaSpongeBlock(
+			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
+	
 	public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("specal_block",
 			() -> new Specalblock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
 					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).slipperiness(1.2f).speedFactor(0.7f).noDrops()));
@@ -72,6 +79,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> STONKS_PRESSURE_PLATE = BLOCKS.register("stonks_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.
 			create(Material.IRON, MaterialColor.GOLD)
 			.hardnessAndResistance(5f, 20f)
+			));
+	
+	public static final RegistryObject<Block> STONKS_CROP = BLOCKS.register("stonks_crop", () -> new StonksCrop(Block.Properties.
+			from(Blocks.CARROTS)
 			));
 	
 }

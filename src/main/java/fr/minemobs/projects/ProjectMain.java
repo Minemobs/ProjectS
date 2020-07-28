@@ -1,11 +1,12 @@
 package fr.minemobs.projects;
 
 import fr.minemobs.projects.init.*;
-
+import fr.minemobs.projects.objects.blocks.StonksCrop;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.minecraft.block.TNTBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -44,6 +45,7 @@ public class ProjectMain {
     	ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
     	ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
     	ModEntityType.ENTITY_TYPES.register(modEventBus);
+    	EnchantmentInit.ENCHANTMENTS.register(modEventBus);
     	
 		BiomeInit.BIOMES.register(modEventBus);
 		DimensionInit.MOD_DIMENSIONS.register(modEventBus);
@@ -57,7 +59,7 @@ public class ProjectMain {
 	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
-		BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
+		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof StonksCrop)).map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(ProjectItemGroup.instance);
 			final BlockItem blockItem = new BlockItem(block, properties);
 			blockItem.setRegistryName(block.getRegistryName());
@@ -84,8 +86,8 @@ public class ProjectMain {
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
     	
-    }
-    
+    }   
+        
     public static class ProjectItemGroup extends ItemGroup {
 
     	public static final ProjectItemGroup instance = new ProjectItemGroup(ItemGroup.GROUPS.length, "Project S");

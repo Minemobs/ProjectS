@@ -1,8 +1,8 @@
 {
-  "parent": "minecraft:block/slab_top",
+  "parent": "block/slab_top",
   "textures": {
-    "bottom": "projects:block/project_block",
-    "top": "projects:block/project_block",
-    "side": "projects:block/project_block"
+      "bottom": "projects:block/project_block",
+      "top": "projects:block/project_block",
+      "side": "projects:block/project_block"
   }
 }

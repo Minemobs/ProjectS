@@ -8,6 +8,7 @@ import fr.minemobs.projects.util.enums.ProjectItemTier;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -86,5 +87,8 @@ public class ItemInit {
 	public static final RegistryObject<ArmorItem> obsidian_boots = ITEMS.register("obsidian_boots",
 			() -> new ArmorItem(ModArmorMaterial.OBSIDIAN, EquipmentSlotType.FEET,
 					new Item.Properties().group(ProjectItemGroup.instance).rarity(Rarity.EPIC)));
+	
+	//seeds
+	public static final RegistryObject<Item> STONKS_SEED = ITEMS.register("stonks_seed", () -> new BlockItem(BlockInit.STONKS_CROP.get(), new Item.Properties().group(ProjectItemGroup.instance)));
 	
 }
