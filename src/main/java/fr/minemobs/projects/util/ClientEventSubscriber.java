@@ -1,5 +1,9 @@
 package fr.minemobs.projects.util;
 
+import org.lwjgl.opengl.GL11;
+
+import com.mojang.blaze3d.platform.GlStateManager;
+
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.client.entity.render.ProjectEntityRender;
 import fr.minemobs.projects.client.gui.StonksChestScreen;

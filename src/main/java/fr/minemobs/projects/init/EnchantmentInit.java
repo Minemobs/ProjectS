@@ -1,6 +1,7 @@
 package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
+import fr.minemobs.projects.enchantments.ExplosionEnchant;
 import fr.minemobs.projects.enchantments.ObsidianEnchant;
 import fr.minemobs.projects.enchantments.UpstepEnchantment;
 import net.minecraft.enchantment.*;
@@ -22,6 +23,10 @@ public class EnchantmentInit {
     
     public static final RegistryObject<Enchantment> OBSIDIAN = ENCHANTMENTS.register("obsidian", () -> new ObsidianEnchant(Rarity.RARE, EnchantmentType.ARMOR_FEET, new EquipmentSlotType[] {
     		EquipmentSlotType.FEET
+    }));
+    
+    public static final RegistryObject<Enchantment> EXPLOSION = ENCHANTMENTS.register("explosion", () -> new ExplosionEnchant(Rarity.VERY_RARE, EnchantmentType.WEAPON, new EquipmentSlotType[] {
+    		EquipmentSlotType.MAINHAND
     }));
 
 }

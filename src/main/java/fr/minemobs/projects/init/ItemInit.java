@@ -37,6 +37,7 @@ public class ItemInit {
 					.food(new Food.Builder()
 					.hunger(6)
 					.saturation(1.2f)
+					.setAlwaysEdible()
 					.effect(new EffectInstance(Effects.GLOWING, 60, 5), 50f)
 					.build())));
 
