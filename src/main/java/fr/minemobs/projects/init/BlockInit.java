@@ -2,9 +2,11 @@ package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.objects.blocks.BlockQuarry;
+import fr.minemobs.projects.objects.blocks.LanternBlock;
 import fr.minemobs.projects.objects.blocks.LavaSpongeBlock;
 import fr.minemobs.projects.objects.blocks.ModPressurePlateBlock;
 import fr.minemobs.projects.objects.blocks.ModWoodButtonBlock;
+import fr.minemobs.projects.objects.blocks.OakDoor;
 import fr.minemobs.projects.objects.blocks.ProjectChestBlock;
 import fr.minemobs.projects.objects.blocks.Specalblock;
 import fr.minemobs.projects.objects.blocks.StonksCrop;
@@ -15,7 +17,6 @@ import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.SpongeBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -26,11 +27,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockInit {
 	
+	// Blocks
+	
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			ProjectMain.MOD_ID);
-
+	
 	public static final RegistryObject<Block> project_block = BLOCKS.register("project_block", () -> new Block(
-			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
+			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL).slipperiness(4)));
 	
 	public static final RegistryObject<Block> lava_sponge = BLOCKS.register("lava_sponge", () -> new LavaSpongeBlock(
 			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
@@ -54,6 +57,10 @@ public class BlockInit {
 			.hardnessAndResistance(5f, 20f)
 			.sound(SoundType.METAL)
 			));
+	public static final RegistryObject<Block> OAK_DOOR = BLOCKS.register("oak_door", () -> new OakDoor((Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid())));
+	
+	public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern", () -> new LanternBlock((Block.Properties.create(Material.IRON).hardnessAndResistance(3.5F).sound(SoundType.LANTERN).lightValue(15).notSolid())));
+	
 	
 	//todo models / blockstates / textures
 	

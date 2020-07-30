@@ -48,7 +48,7 @@ public class ExplosionEnchant extends Enchantment {
 			if (p.hasItemInSlot(EquipmentSlotType.MAINHAND)
 					&& EnchantmentHelper.getEnchantmentLevel(EnchantmentInit.EXPLOSION.get(),
 							p.getItemStackFromSlot(EquipmentSlotType.MAINHAND)) > 0) {
-				world.createExplosion(entity, entity.getPosX(), entity.getPosY(), entity.getPosZ(), 4, Explosion.Mode.BREAK);
+				world.createExplosion(entity, entity.getPosX(), entity.getPosY(), entity.getPosZ(), 4, Explosion.Mode.NONE);
 			}
 		}
 	}

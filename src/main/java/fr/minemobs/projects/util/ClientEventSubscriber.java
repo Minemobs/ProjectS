@@ -26,6 +26,7 @@ public class ClientEventSubscriber {
     public static void clientSetup(FMLClientSetupEvent e){
         ScreenManager.registerFactory(ModContainerTypes.EXAMPLE_CHEST.get(), StonksChestScreen::new);
         RenderTypeLookup.setRenderLayer(BlockInit.STONKS_CROP.get(), RenderType.getCutoutMipped());
+        RenderTypeLookup.setRenderLayer(BlockInit.OAK_DOOR.get(), RenderType.getCutoutMipped());
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.PROJECT_ENTITY.get(), ProjectEntityRender::new);
     }
 }
