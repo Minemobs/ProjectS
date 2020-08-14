@@ -12,6 +12,7 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ShovelItem;
@@ -43,6 +44,12 @@ public class ItemInit {
 
 	public static final RegistryObject<SpecialItem> SPECIAL_ITEM = ITEMS.register("special_item",
 			() -> new SpecialItem(new Item.Properties().group(ProjectItemGroup.instance)));
+	
+	public static final RegistryObject<Item> CRYSTAL = ITEMS.register("crystal", () -> new Item(new Item.Properties()
+			.group(ProjectItemGroup.instance)
+			.maxStackSize(4)
+			)
+			);
 	
 	//tools
 	//sword

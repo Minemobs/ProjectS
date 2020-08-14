@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"QPQ",
+		" Y ",
+		"AAA"
+	],
+	"key": {
+		"Q": {
+			"item": "minecraft:quartz_block"
+		},
+		"P": {
+			"item": "minecraft:polished_andesite"
+		},
+		"Y": {
+			"item": "minecraft:quartz_pillar"
+		},
+		"A": {
+			"item": "minecraft:andesite"
+		}
+	},
+	"result": {
+		"item": "projects:item_pedestal",
+		"count": 1
+	}
+}

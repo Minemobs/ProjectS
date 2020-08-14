@@ -1,5 +1,6 @@
 package fr.minemobs.projects.world.dimension;
 
+import net.minecraft.client.audio.MusicTicker.MusicType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -61,7 +62,17 @@ public class ProjectDimension extends Dimension {
     public Vec3d getFogColor(float celestialAngle, float partialTicks) {
         return Vec3d.ZERO;
     }
-
+    
+    @Override
+    public boolean isSkyColored() {
+    	return true;
+    }
+    
+    @Override
+    public MusicType getMusicType() {
+    	return MusicType.GAME;
+    }
+    
     @Override
     public boolean canRespawnHere() {
         return true;

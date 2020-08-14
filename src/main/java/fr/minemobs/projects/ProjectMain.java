@@ -6,6 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.TNTBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -38,7 +39,6 @@ public class ProjectMain {
     public ProjectMain() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     	modEventBus.addListener(this::setup);
-    	modEventBus.addListener(this::doClientStuff);
     	
     	ItemInit.ITEMS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
@@ -46,6 +46,7 @@ public class ProjectMain {
     	ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
     	ModEntityType.ENTITY_TYPES.register(modEventBus);
     	EnchantmentInit.ENCHANTMENTS.register(modEventBus);
+    	FluidInit.FLUIDS.register(modEventBus);
     	
 		BiomeInit.BIOMES.register(modEventBus);
 		DimensionInit.MOD_DIMENSIONS.register(modEventBus);
@@ -59,7 +60,7 @@ public class ProjectMain {
 	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
-		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof StonksCrop)).map(RegistryObject::get).forEach(block -> {
+		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof StonksCrop) && !(block.get() instanceof FlowingFluidBlock)).map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(ProjectItemGroup.instance);
 			final BlockItem blockItem = new BlockItem(block, properties);
 			blockItem.setRegistryName(block.getRegistryName());
@@ -79,10 +80,6 @@ public class ProjectMain {
 
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
-    	
-    }
-    
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
     	

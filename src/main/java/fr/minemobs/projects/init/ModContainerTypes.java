@@ -1,6 +1,7 @@
 package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
+import fr.minemobs.projects.container.ItemPedestalContainer;
 import fr.minemobs.projects.container.ProjectChestContainer;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
@@ -15,4 +16,8 @@ public class ModContainerTypes {
 
 	public static final RegistryObject<ContainerType<ProjectChestContainer>> EXAMPLE_CHEST = CONTAINER_TYPES
 			.register("stonks_chest", () -> IForgeContainerType.create(ProjectChestContainer::new));
+	
+	public static final RegistryObject<ContainerType<ItemPedestalContainer>> ITEM_PEDESTAL = CONTAINER_TYPES
+			.register("item_pedestal", () -> IForgeContainerType.create(ItemPedestalContainer::new));
 }
+

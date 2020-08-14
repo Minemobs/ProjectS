@@ -46,9 +46,10 @@ public class ProjectBiome extends Biome {
 		this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 				Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.RED_MUSHROOM_CONFIG).withPlacement(
 						Placement.COUNT_CHANCE_HEIGHTMAP_DOUBLE.configure(new HeightWithChanceConfig(1, 0.125F))));
-
+		
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addExtraGoldOre(this);
 		DefaultBiomeFeatures.addExtraEmeraldOre(this);
+		DefaultBiomeFeatures.addOakAndJungleTrees(this);
 	}
 }

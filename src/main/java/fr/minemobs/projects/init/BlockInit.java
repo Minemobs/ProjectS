@@ -2,6 +2,7 @@ package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.objects.blocks.BlockQuarry;
+import fr.minemobs.projects.objects.blocks.ItemPedestalBlock;
 import fr.minemobs.projects.objects.blocks.LanternBlock;
 import fr.minemobs.projects.objects.blocks.LavaSpongeBlock;
 import fr.minemobs.projects.objects.blocks.ModPressurePlateBlock;
@@ -10,6 +11,7 @@ import fr.minemobs.projects.objects.blocks.OakDoor;
 import fr.minemobs.projects.objects.blocks.ProjectChestBlock;
 import fr.minemobs.projects.objects.blocks.Specalblock;
 import fr.minemobs.projects.objects.blocks.StonksCrop;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
@@ -20,6 +22,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -57,9 +60,9 @@ public class BlockInit {
 			.hardnessAndResistance(5f, 20f)
 			.sound(SoundType.METAL)
 			));
-	public static final RegistryObject<Block> OAK_DOOR = BLOCKS.register("oak_door", () -> new OakDoor((Block.Properties.create(Material.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD).notSolid())));
 	
-	public static final RegistryObject<Block> LANTERN = BLOCKS.register("lantern", () -> new LanternBlock((Block.Properties.create(Material.IRON).hardnessAndResistance(3.5F).sound(SoundType.LANTERN).lightValue(15).notSolid())));
+	public static final RegistryObject<Block> ITEM_PEDESTAL = BLOCKS.register("item_pedestal", () -> new ItemPedestalBlock(
+			Block.Properties.from(Blocks.COBBLESTONE)));
 	
 	
 	//todo models / blockstates / textures
