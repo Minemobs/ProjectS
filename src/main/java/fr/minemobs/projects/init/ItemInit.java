@@ -2,6 +2,7 @@ package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.ProjectMain.ProjectItemGroup;
+import fr.minemobs.projects.objects.items.ModMusicDiscItem;
 import fr.minemobs.projects.objects.items.SpecialItem;
 import fr.minemobs.projects.util.enums.ModArmorMaterial;
 import fr.minemobs.projects.util.enums.ProjectItemTier;
@@ -20,11 +21,8 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.ObjectHolder;
 
 public class ItemInit {
 	
@@ -98,5 +96,10 @@ public class ItemInit {
 	
 	//seeds
 	public static final RegistryObject<Item> STONKS_SEED = ITEMS.register("stonks_seed", () -> new BlockItem(BlockInit.STONKS_CROP.get(), new Item.Properties().group(ProjectItemGroup.instance)));
+	
+	//disc
+	public static final RegistryObject<Item> SILHOUETTE = ITEMS.register("silhouette_disc",
+			() -> new ModMusicDiscItem(5, SoundInit.SILHOUETTE_NARUTO_OP16.get(), new Item.Properties()
+			.group(ProjectItemGroup.instance).maxStackSize(1).rarity(Rarity.EPIC)));
 	
 }

@@ -1,0 +1,12 @@
+{
+    "disc.silhouette": {
+        "category": "disc",
+        "subtitle": "silhouette",
+        "sounds": [
+            {
+                "name": "projects:disc/silhouette",
+                "stream": true
+            }
+        ]
+    }
+}

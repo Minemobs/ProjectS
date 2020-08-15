@@ -33,6 +33,10 @@
     "item.projects.obsidian_leggings": "Obsidian leggings",
     //boots
     "item.projects.obsidian_boots": "Obsidian boots",
+    //disc
+    "item.projects.disc_silhouette": "Silhouette. Disc 3310",
+    //disc description
+    "item.projects.disc_silhouette.desc": "Kana-Boon - Silhouette",
 
     //gui
     "container.example_chest": "Example Chest",

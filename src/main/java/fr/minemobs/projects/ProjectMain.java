@@ -47,6 +47,7 @@ public class ProjectMain {
     	ModEntityType.ENTITY_TYPES.register(modEventBus);
     	EnchantmentInit.ENCHANTMENTS.register(modEventBus);
     	FluidInit.FLUIDS.register(modEventBus);
+    	SoundInit.SOUNDS.register(modEventBus);
     	
 		BiomeInit.BIOMES.register(modEventBus);
 		DimensionInit.MOD_DIMENSIONS.register(modEventBus);
