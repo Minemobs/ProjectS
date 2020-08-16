@@ -33,10 +33,14 @@
     "item.projects.obsidian_leggings": "Obsidian leggings",
     //boots
     "item.projects.obsidian_boots": "Obsidian boots",
-    //disc
-    "item.projects.disc_silhouette": "Silhouette. Disc 3310",
-    //disc description
-    "item.projects.disc_silhouette.desc": "Kana-Boon - Silhouette",
+
+    //discs
+    "item.projects.silhouette_disc": "Silhouette. Disc 3310",
+    
+    //descriptions
+    "item.projects.silhouette_disc.desc": "Kana-Boon - Silhouette",
+    "tooltip.projects.holdshift": "HOLD\u00A7e SHIFT\u00A77 for more informations!",
+    "tooltip.projects.itempedestial": "Hello bro",
 
     //gui
     "container.example_chest": "Example Chest",
@@ -47,5 +51,8 @@
     //enchants
     "enchantment.projects.explosion": "Explosion",
     "enchantment.projects.obsidian": "Obsidian Boots",
-    "enchantment.projects.upstep": "no translation for this"
+    "enchantment.projects.upstep": "no translation for this",
+
+    //Messages
+    "message.projects.kaboom": "§4Kaboom"
 }

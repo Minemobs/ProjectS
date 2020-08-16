@@ -1,16 +1,21 @@
 package fr.minemobs.projects.world.dimension;
 
 import net.minecraft.client.audio.MusicTicker.MusicType;
+import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 
 import java.util.function.Supplier;
+
+import fr.minemobs.projects.ProjectMain;
 
 public class ProjectDimension extends Dimension {
 
@@ -85,6 +90,7 @@ public class ProjectDimension extends Dimension {
 
     @Override
     public SleepResult canSleepAt(PlayerEntity player, BlockPos pos) {
+        player.sendMessage(new TranslationTextComponent("message." + ProjectMain.MOD_ID + ".kaboom"));
         return SleepResult.BED_EXPLODES;
     }
 

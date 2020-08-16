@@ -18,6 +18,7 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.energy.IEnergyStorage;
 
 public class QuarryTileEntity extends TileEntity implements ITickableTileEntity {
 
@@ -104,4 +105,5 @@ public class QuarryTileEntity extends TileEntity implements ITickableTileEntity 
 		}
 		init();
 	}
+
 }

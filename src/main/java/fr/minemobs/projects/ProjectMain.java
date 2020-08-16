@@ -3,11 +3,12 @@ package fr.minemobs.projects;
 import fr.minemobs.projects.init.*;
 import fr.minemobs.projects.objects.blocks.StonksCrop;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.block.TNTBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -70,7 +71,7 @@ public class ProjectMain {
 
 		LOGGER.debug("Registered BlockItems!");
 	}
-	
+
 	@SubscribeEvent
 	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> e) {
 		BiomeInit.registerBiomes();
@@ -84,7 +85,13 @@ public class ProjectMain {
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
     	
-    }   
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+	public void onClientSetup(FMLClientSetupEvent e){
+
+	}
         
     public static class ProjectItemGroup extends ItemGroup {
 

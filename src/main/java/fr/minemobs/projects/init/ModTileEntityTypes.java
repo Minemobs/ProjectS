@@ -25,5 +25,4 @@ public class ModTileEntityTypes {
 	public static final RegistryObject<TileEntityType<ItemPedestalTileEntity>> ITEM_PEDESTAL = TILE_ENTITY_TYPES
 			.register("item_pedestal", () -> TileEntityType.Builder
 					.create(ItemPedestalTileEntity::new, BlockInit.ITEM_PEDESTAL.get()).build(null));
-	
 }
