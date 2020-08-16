@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"   ",
+		" SM",
+		"   "
+	],
+	"key": {
+		"S": {
+			"item": "minecraft:sponge"
+		},
+		"M": {
+			"item": "minecraft:magma_block"
+		}
+	},
+	"result": {
+		"item": "projects:lava_sponge",
+		"count": 1
+	}
+}

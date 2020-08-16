@@ -28,8 +28,8 @@ public class ItemInit {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ProjectMain.MOD_ID);
 	
-	public static final RegistryObject<Item> project_item = ITEMS.register("project_item",
-			() -> new Item(new Item.Properties().group(ProjectItemGroup.instance)));
+	/*/public static final RegistryObject<Item> project_item = ITEMS.register("project_item",
+			() -> new Item(new Item.Properties().group(ProjectItemGroup.instance)));/*/
 
 	public static final RegistryObject<Item> stonks_item = ITEMS.register("stonks_item",
 			() -> new Item(new Item.Properties().group(ProjectItemGroup.instance)
@@ -95,7 +95,7 @@ public class ItemInit {
 					new Item.Properties().group(ProjectItemGroup.instance).rarity(Rarity.EPIC)));
 	
 	//seeds
-	public static final RegistryObject<Item> STONKS_SEED = ITEMS.register("stonks_seed", () -> new BlockItem(BlockInit.STONKS_CROP.get(), new Item.Properties().group(ProjectItemGroup.instance)));
+	//public static final RegistryObject<Item> STONKS_SEED = ITEMS.register("stonks_seed", () -> new BlockItem(BlockInit.STONKS_CROP.get(), new Item.Properties().group(ProjectItemGroup.instance)));
 	
 	//disc
 	public static final RegistryObject<Item> SILHOUETTE = ITEMS.register("silhouette_disc",

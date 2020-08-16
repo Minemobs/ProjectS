@@ -1,6 +1,7 @@
 package fr.minemobs.projects.objects.blocks;
 
 import java.util.Queue;
+import java.util.stream.Stream;
 
 import com.google.common.collect.Lists;
 
@@ -17,6 +18,11 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Tuple;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.IBooleanFunction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 public class LavaSpongeBlock extends Block {
@@ -81,4 +87,36 @@ public class LavaSpongeBlock extends Block {
 
 	      return i > 0;
 	   }
+
+	@Override
+	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
+		return Stream.of(
+				Block.makeCuboidShape(1, 1, 1, 15, 15, 15),
+				Block.makeCuboidShape(0, 1, 1, 1, 15, 15),
+				Block.makeCuboidShape(1, 1, 15, 15, 15, 16),
+				Block.makeCuboidShape(1, 1, 0, 15, 15, 1),
+				Block.makeCuboidShape(15, 1, 1, 16, 15, 15),
+				Block.makeCuboidShape(0, 0, 0, 1, 1, 1),
+				Block.makeCuboidShape(15, 0, 15, 16, 1, 16),
+				Block.makeCuboidShape(15, 0, 0, 16, 1, 1),
+				Block.makeCuboidShape(0, 0, 15, 1, 1, 16),
+				Block.makeCuboidShape(0, 0, 1, 1, 1, 15),
+				Block.makeCuboidShape(15, 0, 1, 16, 1, 15),
+				Block.makeCuboidShape(1, 0, 0, 15, 1, 1),
+				Block.makeCuboidShape(1, 0, 15, 15, 1, 16),
+				Block.makeCuboidShape(15, 15, 1, 16, 16, 15),
+				Block.makeCuboidShape(0, 15, 1, 1, 16, 15),
+				Block.makeCuboidShape(1, 15, 0, 15, 16, 1),
+				Block.makeCuboidShape(1, 15, 15, 15, 16, 16),
+				Block.makeCuboidShape(0, 15, 0, 1, 16, 1),
+				Block.makeCuboidShape(15, 15, 15, 16, 16, 16),
+				Block.makeCuboidShape(15, 15, 0, 16, 16, 1),
+				Block.makeCuboidShape(0, 15, 15, 1, 16, 16),
+				Block.makeCuboidShape(0, 1, 15, 1, 15, 16),
+				Block.makeCuboidShape(15, 1, 15, 16, 15, 16),
+				Block.makeCuboidShape(15, 1, 0, 16, 15, 1),
+				Block.makeCuboidShape(0, 1, 0, 1, 15, 1)
+		).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
+	}
+
 	}

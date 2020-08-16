@@ -32,10 +32,10 @@ public class StonksCrop extends CropsBlock {
 		return true;
 	}
 	
-	@Override
+	/*/@Override
 	protected IItemProvider getSeedsItem() {
 		return ItemInit.STONKS_SEED.get();
-	}
+	}/*/
 	
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

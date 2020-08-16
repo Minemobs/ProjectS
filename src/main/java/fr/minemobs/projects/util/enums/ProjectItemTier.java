@@ -9,7 +9,7 @@ import net.minecraft.util.LazyValue;
 
 public enum ProjectItemTier implements IItemTier{
 	OBSIDIAN(6, 8124, 11.0F, 6.0F, 40, () -> {
-		return Ingredient.fromItems(ItemInit.project_item.get());
+		return Ingredient.fromItems(ItemInit.stonks_item.get());
 	}),
 	
 	EMERALD(5, 4062, 10.0F, 5.0F, 31, () -> {

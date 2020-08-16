@@ -40,10 +40,10 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> lava_sponge = BLOCKS.register("lava_sponge", () -> new LavaSpongeBlock(
 			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
-	
-	public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("specal_block",
+
+	/*/public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("specal_block",
 			() -> new Specalblock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
-					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).slipperiness(1.2f).speedFactor(0.7f).noDrops()));
+					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).slipperiness(1.2f).speedFactor(0.7f).noDrops()));/*/
 
 	public static final RegistryObject<Block> QUARRY = BLOCKS.register("quarry",
 			() -> new BlockQuarry(Block.Properties.create(Material.IRON)));
@@ -51,7 +51,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> STONKS_CHEST = BLOCKS.register("stonks_chest",
 			() -> new ProjectChestBlock(Block.Properties.from(BlockInit.project_block.get())));
 
-	public static final RegistryObject<Block> stonks_stairs = BLOCKS.register("stonks_stairs",
+	/*/public static final RegistryObject<Block> stonks_stairs = BLOCKS.register("stonks_stairs",
 			() -> new StairsBlock(() -> BlockInit.project_block.get().getDefaultState(),
 					Block.Properties.create(Material.SAND, MaterialColor.GOLD)));
 	
@@ -59,7 +59,7 @@ public class BlockInit {
 			create(Material.IRON, MaterialColor.GOLD)
 			.hardnessAndResistance(5f, 20f)
 			.sound(SoundType.METAL)
-			));
+			));/*/
 	
 	public static final RegistryObject<Block> ITEM_PEDESTAL = BLOCKS.register("item_pedestal", () -> new ItemPedestalBlock(
 			Block.Properties.from(Blocks.COBBLESTONE)));
@@ -67,7 +67,7 @@ public class BlockInit {
 	
 	//todo models / blockstates / textures
 	
-	public static final RegistryObject<Block> STONKS_FENCE_GATE = BLOCKS.register("stonks_fence_gate", () -> new FenceGateBlock(Block.Properties.
+	/*/public static final RegistryObject<Block> STONKS_FENCE_GATE = BLOCKS.register("stonks_fence_gate", () -> new FenceGateBlock(Block.Properties.
 			create(Material.IRON, MaterialColor.GOLD)
 			.hardnessAndResistance(5f, 20f)
 			.sound(SoundType.METAL)
@@ -77,11 +77,11 @@ public class BlockInit {
 			create(Material.IRON, MaterialColor.GOLD)
 			.hardnessAndResistance(5f, 20f)
 			.sound(SoundType.METAL)
-			));
+			));/*/
 	
 	//todo models / blockstates / textures
 	
-	public static final RegistryObject<Block> STONKS_BUTTON = BLOCKS.register("stonks_button", () -> new ModWoodButtonBlock(Block.Properties.
+	/*/public static final RegistryObject<Block> STONKS_BUTTON = BLOCKS.register("stonks_button", () -> new ModWoodButtonBlock(Block.Properties.
 			create(Material.IRON, MaterialColor.GOLD)
 			.hardnessAndResistance(5f, 20f)
 			));
@@ -93,6 +93,6 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> STONKS_CROP = BLOCKS.register("stonks_crop", () -> new StonksCrop(Block.Properties.
 			from(Blocks.CARROTS)
-			));
+			));/*/
 	
 }

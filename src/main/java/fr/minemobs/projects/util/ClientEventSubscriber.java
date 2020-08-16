@@ -32,7 +32,7 @@ public class ClientEventSubscriber {
     public static void clientSetup(FMLClientSetupEvent e){
         ScreenManager.registerFactory(ModContainerTypes.EXAMPLE_CHEST.get(), StonksChestScreen::new);
         ScreenManager.registerFactory(ModContainerTypes.ITEM_PEDESTAL.get(), ItemPedestalScreen::new);
-        RenderTypeLookup.setRenderLayer(BlockInit.STONKS_CROP.get(), RenderType.getCutoutMipped());
+		/*/RenderTypeLookup.setRenderLayer(BlockInit.STONKS_CROP.get(), RenderType.getCutoutMipped());/*/
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.PROJECT_ENTITY.get(), ProjectEntityRender::new);
         
         ItemInit.CRYSTAL.get().addPropertyOverride(new ResourceLocation(ProjectMain.MOD_ID, "count"), new IItemPropertyGetter() {
