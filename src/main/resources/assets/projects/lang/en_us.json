@@ -1,12 +1,11 @@
 {
     //items
-    "item.projects.project_item": "Le cauchemar de jerome",
     "item.projects.stonks_item": "Ultra Stonks",
     "item.projects.special_item": "Special item",
+    "item.projects.crystal": "Crystal",
 
     //blocks
-    "block.projects.project_block": "C rien c le sud",
-    "block.projects.specal_block": "Specal block",
+    "block.projects.project_block": "Libe is a cheater",
     "block.projects.lava_sponge": "Lava sponge",
     
     //creative tab
@@ -40,10 +39,11 @@
     //descriptions
     "item.projects.silhouette_disc.desc": "Kana-Boon - Silhouette",
     "tooltip.projects.holdshift": "HOLD\u00A7e SHIFT\u00A77 for more informations!",
-    "tooltip.projects.itempedestial": "Hello bro",
+    "tooltip.projects.itempedestal": "Hello bro",
 
     //gui
     "container.example_chest": "Example Chest",
+    "container.projects.item_pedestal": "Item Pedestal",
 
     //crops
     "block.projects.stonks_crop": "Stonks crops",

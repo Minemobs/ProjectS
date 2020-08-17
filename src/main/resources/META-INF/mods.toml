@@ -29,11 +29,7 @@ credits="Merci a TurtyWurty pour avoir fournis des tutoriel sur l api forge de q
 authors="minemobs" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-if(forge.getVersion == Forge.Versions.1.12.2 && minemobs.dev == true){
-    return;
-}else{
-    system.out.println("Oh tiens une bonne version");
-}
+Hello ✅
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.projects]] #optional

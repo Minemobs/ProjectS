@@ -1,12 +1,15 @@
 package fr.minemobs.projects.client.gui;
 
+import java.awt.Color;
+
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.container.ItemPedestalContainer;
-
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.BowItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
@@ -22,7 +25,7 @@ public class ItemPedestalScreen extends ContainerScreen<ItemPedestalContainer> {
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-
+	
 	@Override
 	public void render(final int mouseX, final int mouseY, final float partialTicks) {
 		this.renderBackground();

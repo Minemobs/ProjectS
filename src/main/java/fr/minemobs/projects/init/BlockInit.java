@@ -40,7 +40,7 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> lava_sponge = BLOCKS.register("lava_sponge", () -> new LavaSpongeBlock(
 			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
-
+	
 	/*/public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("specal_block",
 			() -> new Specalblock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
 					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).slipperiness(1.2f).speedFactor(0.7f).noDrops()));/*/

@@ -5,14 +5,11 @@ import fr.minemobs.projects.client.entity.render.ProjectEntityRender;
 import fr.minemobs.projects.client.gui.ItemPedestalScreen;
 import fr.minemobs.projects.client.gui.StonksChestScreen;
 import fr.minemobs.projects.client.tileentity.renderer.ItemPedestalRenderer;
-import fr.minemobs.projects.init.BlockInit;
 import fr.minemobs.projects.init.ItemInit;
 import fr.minemobs.projects.init.ModContainerTypes;
 import fr.minemobs.projects.init.ModEntityType;
 import fr.minemobs.projects.init.ModTileEntityTypes;
 import net.minecraft.client.gui.ScreenManager;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemStack;
@@ -33,6 +30,7 @@ public class ClientEventSubscriber {
         ScreenManager.registerFactory(ModContainerTypes.EXAMPLE_CHEST.get(), StonksChestScreen::new);
         ScreenManager.registerFactory(ModContainerTypes.ITEM_PEDESTAL.get(), ItemPedestalScreen::new);
 		/*/RenderTypeLookup.setRenderLayer(BlockInit.STONKS_CROP.get(), RenderType.getCutoutMipped());/*/
+        ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.ITEM_PEDESTAL.get(), ItemPedestalRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityType.PROJECT_ENTITY.get(), ProjectEntityRender::new);
         
         ItemInit.CRYSTAL.get().addPropertyOverride(new ResourceLocation(ProjectMain.MOD_ID, "count"), new IItemPropertyGetter() {
@@ -57,7 +55,5 @@ public class ClientEventSubscriber {
 				}
 			}
 		});
-        
-        ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.ITEM_PEDESTAL.get(), ItemPedestalRenderer::new);
     }
 }

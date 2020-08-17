@@ -22,6 +22,12 @@ public class ModEntityType {
                     () -> EntityType.Builder.<ProjectEntity>create(ProjectEntity::new, EntityClassification.CREATURE)
                             .size(0.9f, 1.3f)
                             .build(new ResourceLocation(ProjectMain.MOD_ID, "project_entity").toString()));
+    
+    public static final RegistryObject<EntityType<CrystalEntity>> CRYSTAL_ENTITY = ENTITY_TYPES
+            .register("crystal_entity",
+                    () -> EntityType.Builder.<CrystalEntity>create(CrystalEntity::new, EntityClassification.MISC)
+                    .size(0.25F, 0.25F)
+                    .build(new ResourceLocation(ProjectMain.MOD_ID, "crystal").toString()));
 
     
 }

@@ -4,7 +4,6 @@ import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.tileentity.ItemPedestalTileEntity;
 import fr.minemobs.projects.tileentity.ProjectChestTileEntity;
 import fr.minemobs.projects.tileentity.QuarryTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -25,4 +24,5 @@ public class ModTileEntityTypes {
 	public static final RegistryObject<TileEntityType<ItemPedestalTileEntity>> ITEM_PEDESTAL = TILE_ENTITY_TYPES
 			.register("item_pedestal", () -> TileEntityType.Builder
 					.create(ItemPedestalTileEntity::new, BlockInit.ITEM_PEDESTAL.get()).build(null));
+	
 }

@@ -2,6 +2,7 @@ package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
 import fr.minemobs.projects.ProjectMain.ProjectItemGroup;
+import fr.minemobs.projects.objects.items.CrystalItem;
 import fr.minemobs.projects.objects.items.ModMusicDiscItem;
 import fr.minemobs.projects.objects.items.SpecialItem;
 import fr.minemobs.projects.util.enums.ModArmorMaterial;
@@ -43,11 +44,9 @@ public class ItemInit {
 	public static final RegistryObject<SpecialItem> SPECIAL_ITEM = ITEMS.register("special_item",
 			() -> new SpecialItem(new Item.Properties().group(ProjectItemGroup.instance)));
 	
-	public static final RegistryObject<Item> CRYSTAL = ITEMS.register("crystal", () -> new Item(new Item.Properties()
+	public static final RegistryObject<Item> CRYSTAL = ITEMS.register("crystal", () -> new CrystalItem(new Item.Properties()
 			.group(ProjectItemGroup.instance)
-			.maxStackSize(4)
-			)
-			);
+			.maxStackSize(4)));
 	
 	//tools
 	//sword
