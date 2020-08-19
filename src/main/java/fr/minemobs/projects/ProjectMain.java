@@ -64,7 +64,7 @@ public class ProjectMain {
 
 		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof StonksCrop) && !(block.get() instanceof FlowingFluidBlock)).map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(ProjectItemGroup.instance);
-			final BlockItem blockItem = new BlockItem(block, properties);
+			final BlockItem blockItem = new BlockItem(block, properties.group(ProjectItemGroup.BLOCKS));
 			blockItem.setRegistryName(block.getRegistryName());
 			registry.register(blockItem);
 		});
@@ -82,30 +82,42 @@ public class ProjectMain {
 
     }
 
+	@OnlyIn(Dist.DEDICATED_SERVER)
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
-    	
+    	System.out.println("Hello my frend your are a good guy cause you use my mod so thanks");
     }
 
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
 	public void onClientSetup(FMLClientSetupEvent e){
-
+    	
 	}
         
     public static class ProjectItemGroup extends ItemGroup {
 
-    	public static final ProjectItemGroup instance = new ProjectItemGroup(ItemGroup.GROUPS.length, "Project S");
+		public static final ProjectItemGroup instance = new ProjectItemGroup(ItemGroup.GROUPS.length, "Project S Items");
+
 		private ProjectItemGroup(int index, String label) {
 			super(index, label);
 		}
-		
+
 		@Override
-		public ItemStack createIcon()
-		{
+		public ItemStack createIcon() {
 			return new ItemStack(ItemInit.stonks_item.get());
 		}
-    	
-    }
+
+		public static final ItemGroup BLOCKS = new ItemGroup(ItemGroup.GROUPS.length, "Project S Blocks") {
+			@Override
+			public ItemStack createIcon() {
+				return new ItemStack(BlockInit.project_block.get());
+			}
+
+			@Override
+			public boolean hasSearchBar() {
+				return true;
+			}
+		};
+	}
     
 }

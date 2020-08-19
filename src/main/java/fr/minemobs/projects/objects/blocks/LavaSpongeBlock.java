@@ -5,17 +5,17 @@ import java.util.stream.Stream;
 
 import com.google.common.collect.Lists;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.block.IBucketPickupHandler;
+import fr.minemobs.projects.init.BlockInit;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.fluid.IFluidState;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.Tuple;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.IBooleanFunction;
@@ -43,7 +43,7 @@ public class LavaSpongeBlock extends Block {
 
 	   protected void tryAbsorb(World worldIn, BlockPos pos) {
 	      if (this.absorb(worldIn, pos)) {
-	         //worldIn.setBlockState(pos, Blocks.WET_SPONGE.getDefaultState(), 2);
+	         worldIn.setBlockState(pos, BlockInit.burnt_lava_sponge.get().getDefaultState(), 2);
 	         worldIn.playEvent(2001, pos, Block.getStateId(Blocks.LAVA.getDefaultState()));
 	      }
 
@@ -118,5 +118,4 @@ public class LavaSpongeBlock extends Block {
 				Block.makeCuboidShape(0, 1, 0, 1, 15, 1)
 		).reduce((v1, v2) -> {return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 	}
-
-	}
+}

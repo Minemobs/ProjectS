@@ -1,16 +1,7 @@
 package fr.minemobs.projects.init;
 
 import fr.minemobs.projects.ProjectMain;
-import fr.minemobs.projects.objects.blocks.BlockQuarry;
-import fr.minemobs.projects.objects.blocks.ItemPedestalBlock;
-import fr.minemobs.projects.objects.blocks.LanternBlock;
-import fr.minemobs.projects.objects.blocks.LavaSpongeBlock;
-import fr.minemobs.projects.objects.blocks.ModPressurePlateBlock;
-import fr.minemobs.projects.objects.blocks.ModWoodButtonBlock;
-import fr.minemobs.projects.objects.blocks.OakDoor;
-import fr.minemobs.projects.objects.blocks.ProjectChestBlock;
-import fr.minemobs.projects.objects.blocks.Specalblock;
-import fr.minemobs.projects.objects.blocks.StonksCrop;
+import fr.minemobs.projects.objects.blocks.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -28,6 +19,8 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.annotation.Nonnull;
+
 public class BlockInit {
 	
 	// Blocks
@@ -40,6 +33,9 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> lava_sponge = BLOCKS.register("lava_sponge", () -> new LavaSpongeBlock(
 			Block.Properties.create(Material.IRON).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.METAL)));
+
+	public static final RegistryObject<Block> burnt_lava_sponge = BLOCKS.register("burnt_lava_sponge", () -> new BurntSpongeBlock(
+			Block.Properties.from(lava_sponge.get())));
 	
 	/*/public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("specal_block",
 			() -> new Specalblock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
