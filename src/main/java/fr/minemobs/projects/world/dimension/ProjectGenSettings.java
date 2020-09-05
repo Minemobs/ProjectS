@@ -20,5 +20,10 @@ public class ProjectGenSettings extends GenerationSettings {
     public int getBedrockFloorHeight() {
         return 0;
     }
+    
+    @Override
+    public int getBedrockRoofHeight() {
+    	return 100;
+    }
 
 }

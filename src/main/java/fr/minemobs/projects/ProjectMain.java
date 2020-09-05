@@ -91,7 +91,7 @@ public class ProjectMain {
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
 	public void onClientSetup(FMLClientSetupEvent e){
-    	
+
 	}
         
     public static class ProjectItemGroup extends ItemGroup {
